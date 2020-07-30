@@ -82,7 +82,7 @@ Material:
     - _WindQuality: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0.999}
+    - _Color: {r: 1, g: 0.8632076, b: 0.964002, a: 0.999}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HueVariation: {r: 1, g: 0.43448272, b: 0, a: 0}
     - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.41, a: 1}
