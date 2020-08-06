@@ -8,7 +8,7 @@ public class AIWorld : MonoBehaviour
     public static AIWorld Instance { get; private set; } = null;
     private void Awake()
     {
-        if (Instance != null && Instance != this) 
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
         }
@@ -23,25 +23,30 @@ public class AIWorld : MonoBehaviour
         mAgents.Add(agent);
     }
 
-    public void UnregisterAgent(Agent agent) 
+    public void UnregisterAgent(Agent agent)
     {
         mAgents.Remove(agent);
     }
 
-    public List<Agent> GetNeighborhood(Vector3 center, float range) 
+    public List<Agent> GetNeighborhood(Vector3 center, float range)
     {
         // TODO: optimize this function using quad tree or other technique
         List<Agent> neighbors = new List<Agent>();
         float radiusSqr = range * range;
-        foreach (var agent in mAgents) 
+        foreach (var agent in mAgents)
         {
             var distSqr = Vector3.Distance(agent.transform.position, center);
             if (distSqr == 0.0f) { continue; }
-            if (distSqr < radiusSqr) 
+            if (distSqr < radiusSqr)
             {
                 neighbors.Add(agent);
             }
         }
         return neighbors;
+    }
+
+    public List<Agent> GetAgents() 
+    {
+        return mAgents;
     }
 }
