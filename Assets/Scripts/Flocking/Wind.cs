@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class Wind : Agent
 {
-    Vector3 force;
     void Start()
     {
-        force = new Vector3(0, 0, 1);
         AIWorld.Instance.RegisterAgent(this);
     }
 
     void Update()
     {
-        var acceleration = force / mass;
-        velocity += acceleration * Time.deltaTime;
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
         transform.position += velocity * Time.deltaTime;
     }
@@ -22,5 +18,10 @@ public class Wind : Agent
     private void OnDestroy()
     {
         AIWorld.Instance.UnregisterAgent(this);
+    }
+
+    public void SetInitialVelocity(Vector3 velocity) 
+    {
+        this.velocity = velocity;
     }
 }

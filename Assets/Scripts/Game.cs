@@ -30,7 +30,10 @@ public class Game : MonoBehaviour
                 Debug.Log("Back button pressed");
 
             if (rightInput.GetButtonDown(VRButton.One))
+            { 
                 Debug.Log("Trigger button pressed");
+                OnTriggerButtonPressed();
+            }
         }
 
         if (leftInput != null)
@@ -41,6 +44,7 @@ public class Game : MonoBehaviour
             if (leftInput.GetButtonDown(VRButton.One))
                 Debug.Log("Trigger button pressed");
         }
+
 
         // Any input
         // VRDevice.Device.GetButtonDown(VRButton.One);
@@ -62,6 +66,12 @@ public class Game : MonoBehaviour
 
     private void OnTriggerButtonPressed()
     {
+        var avatar = VRAvatar.Active;
+        if (avatar == null)
+            return;
+        var transform = avatar.GetLimb(VRAvatarLimbAlias.PrimaryHand).Transform;
         Instantiate(windPrefab);
+        windPrefab.transform.position = transform.position;
+        windPrefab.GetComponent<Wind>().SetInitialVelocity(transform.forward);
     }
 }
