@@ -1,19 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(SteeringModule))]
 public class Petal : Agent
 {
     private SteeringModule mSteeringModule;
-    private void Start()
+    public Action<GameObject> OnDeath;
+
+    private void OnEnable()
     {
-        float min = -2.0f;
-        float max = 2.0f;
-        AIWorld.Instance.RegisterAgent(this);
         velocity = Random.insideUnitSphere * maxSpeed;
         transform.rotation = Random.rotation;
-        transform.position = new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max));
+    }
+
+    private void Start()
+    {
         mSteeringModule = GetComponent<SteeringModule>();
     }
 
@@ -33,10 +37,5 @@ public class Petal : Agent
     private void LateUpdate()
     {
         neighbourhood = AIWorld.Instance.GetNeighborhood(transform.position, neighbourhoodRadius);
-    }
-
-    private void OnDestroy()
-    {
-        AIWorld.Instance.UnregisterAgent(this);
     }
 }

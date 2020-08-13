@@ -11,8 +11,7 @@ using Liminal.SDK.VR.Input;
 public class Game : MonoBehaviour
 {
     [SerializeField]GameObject windPrefab;
-
-
+    [SerializeField]Transform hand;
 
     private void Update()
     {
@@ -66,12 +65,8 @@ public class Game : MonoBehaviour
 
     private void OnTriggerButtonPressed()
     {
-        var avatar = VRAvatar.Active;
-        if (avatar == null)
-            return;
-        var transform = avatar.GetLimb(VRAvatarLimbAlias.PrimaryHand).Transform;
         Instantiate(windPrefab);
-        windPrefab.transform.position = transform.position;
-        windPrefab.GetComponent<Wind>().SetInitialVelocity(transform.forward);
+        windPrefab.transform.position = hand.position;
+        windPrefab.GetComponent<Wind>().SetInitialVelocity(hand.forward);
     }
 }
