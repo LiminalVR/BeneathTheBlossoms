@@ -57,6 +57,7 @@ MonoBehaviour:
   maxSpeed: 1
   mass: 1
   neighbourhood: []
+  selfDestructionTime: 10
 --- !u!114 &8451313095591598342
 MonoBehaviour:
   m_ObjectHideFlags: 0

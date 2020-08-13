@@ -65,8 +65,8 @@ public class Game : MonoBehaviour
 
     private void OnTriggerButtonPressed()
     {
-        Instantiate(windPrefab);
-        windPrefab.transform.position = hand.position;
-        windPrefab.GetComponent<Wind>().SetInitialVelocity(hand.forward);
+        var wind = Instantiate(windPrefab);
+        wind.transform.position = hand.position;
+        wind.GetComponent<Wind>().SetInitialVelocity(hand.forward);
     }
 }

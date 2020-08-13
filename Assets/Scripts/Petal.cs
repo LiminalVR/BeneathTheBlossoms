@@ -9,11 +9,14 @@ public class Petal : Agent
 {
     private SteeringModule mSteeringModule;
     public Action<GameObject> OnDeath;
+    [SerializeField] private float selfDestructionTime;
+    private float currTimer;
 
     private void OnEnable()
     {
         velocity = Random.insideUnitSphere * maxSpeed;
         transform.rotation = Random.rotation;
+        currTimer = selfDestructionTime;
     }
 
     private void Start()
@@ -23,6 +26,12 @@ public class Petal : Agent
 
     private void Update()
     {
+        currTimer -= Time.deltaTime;
+        if (currTimer < 0.0f) 
+        {
+            OnDeath.Invoke(gameObject);
+            return;
+        }
         var force = mSteeringModule.Calculate();
         var acceleration = force / mass;
         velocity += acceleration * Time.deltaTime;
