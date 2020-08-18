@@ -54,10 +54,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 1, y: -1, z: 1}
   neighbourhoodRadius: 3
-  maxSpeed: 1
+  maxSpeed: 0.5
   mass: 1
   neighbourhood: []
   selfDestructionTime: 10
+  gravityWeight: 5
 --- !u!114 &8451313095591598342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9686fa0274b7848a09b9c5e748837e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWeight: 1
+  mWeight: 0.5
   mActive: 1
 --- !u!114 &6619908222696777399
 MonoBehaviour:
@@ -156,7 +157,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &8451313095591598347
 MeshFilter:

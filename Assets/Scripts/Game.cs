@@ -10,8 +10,23 @@ using Liminal.SDK.VR.Input;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField]GameObject windPrefab;
-    [SerializeField]Transform hand;
+    [SerializeField] GameObject windPrefab;
+    private GameObject wind;
+    [SerializeField] Transform hand;
+    bool hasTarget = false;
+    Transform target;
+
+    private void Awake()
+    {
+        ServiceLocator.Register<Game>(this);
+    }
+
+    private void Start()
+    {
+        wind = Instantiate(windPrefab);
+        wind.transform.position = hand.position;
+        wind.SetActive(false);
+    }
 
     private void Update()
     {
@@ -19,31 +34,17 @@ public class Game : MonoBehaviour
         if (avatar == null)
             return;
 
-        var rightInput = GetInput(VRInputDeviceHand.Right);
-        var leftInput = GetInput(VRInputDeviceHand.Left);
-
-        // Input Examples
-        if (rightInput != null)
+        bool hold = VRDevice.Device.GetButton(VRButton.One);
+        if (hold && hasTarget)
         {
-            if (rightInput.GetButtonDown(VRButton.Back))
-                Debug.Log("Back button pressed");
-
-            if (rightInput.GetButtonDown(VRButton.One))
-            { 
-                Debug.Log("Trigger button pressed");
-                OnTriggerButtonPressed();
-            }
+            wind.transform.position = target.position;
+            wind.GetComponent<Wind>().SetInitialVelocity(-hand.forward);
+            wind.SetActive(true);
         }
-
-        if (leftInput != null)
+        else
         {
-            if (leftInput.GetButtonDown(VRButton.Back))
-                Debug.Log("Back button pressed");
-
-            if (leftInput.GetButtonDown(VRButton.One))
-                Debug.Log("Trigger button pressed");
+            wind.SetActive(false);
         }
-
 
         // Any input
         // VRDevice.Device.GetButtonDown(VRButton.One);
@@ -63,10 +64,16 @@ public class Game : MonoBehaviour
         ExperienceApp.End();
     }
 
-    private void OnTriggerButtonPressed()
+    public void SetTarget(Transform transform)
     {
-        var wind = Instantiate(windPrefab);
-        wind.transform.position = hand.position;
-        wind.GetComponent<Wind>().SetInitialVelocity(hand.forward);
+        hasTarget = true;
+        target = transform;
     }
+
+    public void UnsetTarget(Transform transform) 
+    {
+        if(transform == target)
+            hasTarget = false;
+    }
+
 }

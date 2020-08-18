@@ -2,15 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(SteeringModule))]
-public class Petal : Agent
+public class Petal : Agent, IPointerEnterHandler, IPointerExitHandler
 {
     private SteeringModule mSteeringModule;
     public Action<GameObject> OnDeath;
     [SerializeField] private float selfDestructionTime;
     private float currTimer;
+    [SerializeField] private float gravityWeight;
 
     private void OnEnable()
     {
@@ -33,6 +36,7 @@ public class Petal : Agent
             return;
         }
         var force = mSteeringModule.Calculate();
+        force += Vector3.down * gravityWeight;
         var acceleration = force / mass;
         velocity += acceleration * Time.deltaTime;
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
@@ -46,5 +50,15 @@ public class Petal : Agent
     private void LateUpdate()
     {
         neighbourhood = AIWorld.Instance.GetNeighborhood(transform.position, neighbourhoodRadius);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        ServiceLocator.Get<Game>().SetTarget(transform);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        ServiceLocator.Get<Game>().UnsetTarget(transform);
     }
 }

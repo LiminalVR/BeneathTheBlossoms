@@ -12,7 +12,7 @@ public class Wind : Agent
     void Update()
     {
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
-        transform.position += velocity * Time.deltaTime;
+        //transform.position += velocity * Time.deltaTime;
     }
 
     private void OnDestroy()
