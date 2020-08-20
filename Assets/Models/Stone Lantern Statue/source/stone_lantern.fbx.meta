@@ -3,7 +3,27 @@ guid: 246d83a8c1401df489f7d1f8b5c5be2f
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paper
+    second: {fileID: 2100000, guid: 448bb77a106179b4d889476748dc7ef2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stone
+    second: {fileID: 2100000, guid: aee1a4e11590cc84baf4c1915947030e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: 430142f6e1f98ff4bb1e5074e3a7a276, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood_lantern
+    second: {fileID: 2100000, guid: bf375bc9068224e4ead9bd5736f81769, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
