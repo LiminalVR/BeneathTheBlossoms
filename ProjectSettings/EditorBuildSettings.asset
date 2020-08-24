@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Matthew's Scenes/TestScene2.unity
+    path: Assets/Scenes/Matthew's Scenes/BeneathTheBlossom.unity
     guid: af4cd1eec9b196c4f8a5d6144395c17d
   m_configObjects: {}
