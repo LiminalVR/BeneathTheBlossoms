@@ -30253,7 +30253,7 @@ Material:
     - _TranslucencyViewDependency: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _TranslucencyColor: {r: 1, g: 0, b: 0.36335707, a: 1}
+    - _TranslucencyColor: {r: 1, g: 0.6556604, b: 0.78116745, a: 1}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
 --- !u!21 &4054643724527812133
