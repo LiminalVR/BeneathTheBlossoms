@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class Wind : Agent
 {
-    void Start()
-    {
-        AIWorld.Instance.RegisterAgent(this);
-    }
-
     void Update()
     {
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
         //transform.position += velocity * Time.deltaTime;
     }
 
-    private void OnDestroy()
+    private void OnEnable()
+    {
+        AIWorld.Instance.RegisterAgent(this);
+    }
+    private void OnDisable()
     {
         AIWorld.Instance.UnregisterAgent(this);
     }
