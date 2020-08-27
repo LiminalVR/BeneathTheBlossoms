@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: Tree Data
   m_EditorClassIdentifier: 
   _uniqueID: 1632
-  materialHash: 34a80debc75b28582cf852db751b02e46291456
+  materialHash: ad902e6117b7171d8237f94f1e93e6f06291456
   root:
     _uniqueID: 1
     seed: 1150659
@@ -30253,7 +30253,7 @@ Material:
     - _TranslucencyViewDependency: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _TranslucencyColor: {r: 1, g: 0.504717, b: 0.6853497, a: 1}
+    - _TranslucencyColor: {r: 1, g: 0.6556604, b: 0.78116745, a: 1}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
 --- !u!21 &4054643724527812133
