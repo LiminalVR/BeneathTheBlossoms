@@ -222,10 +222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db9f71139d7a514ba98036694a870e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWeight: 15
+  mWeight: 50
   mActive: 1
   mPursuitFilter: Wind
-  mPursuitDistance: 5
+  mPursuitDistance: 230
 --- !u!114 &7347785634765109951
 MonoBehaviour:
   m_ObjectHideFlags: 0
