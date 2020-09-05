@@ -134,11 +134,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 1, y: -1, z: 1}
   neighbourhoodRadius: 3
-  maxSpeed: 0.5
+  maxSpeed: 1
   mass: 1
   neighbourhood: []
   selfDestructionTime: 20
-  gravityWeight: 3
+  gravityWeight: 4
 --- !u!114 &8451313095591598342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f5bef8ed2e9474892f473ded58576d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWeight: 6
+  mWeight: 7.5
   mActive: 1
 --- !u!114 &5573077104809397630
 MonoBehaviour:
@@ -222,10 +222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db9f71139d7a514ba98036694a870e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWeight: 10
+  mWeight: 50
   mActive: 1
   mPursuitFilter: Wind
-  mPursuitDistance: 5
+  mPursuitDistance: 230
 --- !u!114 &7347785634765109951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55181c15d0bf60f4b8c3585d2d78c821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWeight: 10
+  mWeight: 15
   mActive: 1
   mFleeFilter: Wind
   mPanicDistance: 0.1
