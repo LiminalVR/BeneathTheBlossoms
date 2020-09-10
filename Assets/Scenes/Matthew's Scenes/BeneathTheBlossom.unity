@@ -3780,8 +3780,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 9657370279bfed349881dae68dc4ad70, type: 3}
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3795,7 +3795,7 @@ MonoBehaviour:
   m_Text: 'Welcome.
 
 
-    Hold the trigger on the leaves to interact with them.'
+    Hold the trigger on the leaves to use your shi energy.'
 --- !u!222 &978193303
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6350,7 +6350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1544015239}
   text: {fileID: 978193302}
-  fadeOutTime: 5
+  fadeOutTime: 7
 --- !u!1 &1612078340
 GameObject:
   m_ObjectHideFlags: 0
