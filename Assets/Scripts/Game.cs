@@ -16,6 +16,12 @@ public class Game : MonoBehaviour
     bool hasTarget = false;
     Transform target;
 
+    public float FadeOutTime;
+    public bool Active;
+    public float GameLength;
+
+    private float _timer;
+
     private void Awake()
     {
         ServiceLocator.Register<Game>(this);
@@ -30,6 +36,19 @@ public class Game : MonoBehaviour
 
     private void Update()
     {
+        if (!Active)
+            return;
+
+        if (_timer < GameLength)
+        {
+            _timer += Time.deltaTime;
+        }
+        else
+        {
+            End();
+            Active = false;
+        }
+
         var avatar = VRAvatar.Active;
         if (avatar == null)
             return;
@@ -61,7 +80,24 @@ public class Game : MonoBehaviour
     /// </summary>
     public void End()
     {
-        ExperienceApp.End();
+        StartCoroutine(routine());
+
+        IEnumerator routine()
+        {
+            var elapsedTime = 0f;
+            var startingVolume = AudioListener.volume;
+
+            ScreenFader.Instance.FadeToBlack(FadeOutTime);
+
+            while (elapsedTime < FadeOutTime)
+            {
+                elapsedTime += Time.deltaTime;
+                AudioListener.volume = Mathf.Lerp(startingVolume, 0f, elapsedTime / FadeOutTime);
+                yield return new WaitForEndOfFrame();
+            }
+
+            ExperienceApp.End();
+        }
     }
 
     public void SetTarget(Transform transform)

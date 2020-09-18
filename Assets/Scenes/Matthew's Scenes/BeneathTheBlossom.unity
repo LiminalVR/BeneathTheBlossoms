@@ -3048,6 +3048,37 @@ Transform:
   m_Father: {fileID: 1997135873}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &779517645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1260162970045296579, guid: 22276a8657744e04cba8ad0a2caf4195,
+    type: 3}
+  m_PrefabInstance: {fileID: 1880869515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &779517646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779517645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb4805e065f6124285edf79e74aea83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CompoundScreenFader: {fileID: 779517647}
+--- !u!114 &779517647 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1260162970045296577, guid: 22276a8657744e04cba8ad0a2caf4195,
+    type: 3}
+  m_PrefabInstance: {fileID: 1880869515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779517645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 979137986, guid: 1661fa78af9aece459a3302206a05902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &780156774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2306b20bbaa513b419b074af287ebf0d,
@@ -5885,6 +5916,9 @@ MonoBehaviour:
   windPrefab: {fileID: 8781961948323684392, guid: ecffd0f6ab3fe264b9996efe0b7803ab,
     type: 3}
   hand: {fileID: 516366169}
+  FadeOutTime: 5
+  Active: 1
+  GameLength: 280
 --- !u!1001 &1476912180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7974,11 +8008,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1997135873}
     m_Modifications:
-    - target: {fileID: 1260162970045296579, guid: 22276a8657744e04cba8ad0a2caf4195,
-        type: 3}
-      propertyPath: m_Name
-      value: VRAvatar
-      objectReference: {fileID: 0}
     - target: {fileID: 1260162969423114810, guid: 22276a8657744e04cba8ad0a2caf4195,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8033,6 +8062,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260162970045296579, guid: 22276a8657744e04cba8ad0a2caf4195,
+        type: 3}
+      propertyPath: m_Name
+      value: VRAvatar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22276a8657744e04cba8ad0a2caf4195, type: 3}
