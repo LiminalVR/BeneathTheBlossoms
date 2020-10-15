@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[System.Serializable]
 static public class ServiceLocator
 {
 	static private readonly Dictionary<System.Type, object> m_systems = new Dictionary<System.Type, object>();

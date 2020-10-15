@@ -19,7 +19,7 @@ public class ObjectPoolManager : MonoBehaviour
     public bool IsInitialized { get { return _isInitialized; } }
     private bool _isInitialized;
 
-    public void Awake()
+    public void Start()
     {
         InitializePool();
         ServiceLocator.Register<ObjectPoolManager>(this);

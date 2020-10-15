@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mWeight: 50
   mActive: 1
-  mPursuitFilter: Wind
+  mPursuitFilter: Respawn
   mPursuitDistance: 230
 --- !u!114 &7347785634765109951
 MonoBehaviour:
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mWeight: 15
   mActive: 1
-  mFleeFilter: Wind
+  mFleeFilter: Respawn
   mPanicDistance: 0.1
 --- !u!65 &8451313095591598345
 BoxCollider:
