@@ -7,6 +7,11 @@ static public class ServiceLocator
 {
 	static private readonly Dictionary<System.Type, object> m_systems = new Dictionary<System.Type, object>();
 
+	static public void Clear()
+    {
+		m_systems.Clear();
+	}
+
 	static public T Register<T>(object target)
 	{
 		if (m_systems.ContainsKey(typeof(T)))

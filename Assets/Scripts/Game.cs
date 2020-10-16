@@ -24,6 +24,7 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
+        ServiceLocator.Clear();
         ServiceLocator.Register<Game>(this);
     }
 
